@@ -91,9 +91,6 @@ if __name__ == "__main__":
     # 업데이트된 파일 복사해서 result.mdb 파일 생성
     main.copy_result_mdb()
 
-    # mdb 파일에서 데이터 가져오기
-    data = main.get_data(main.new_mdb, "text_data")
-
     for table_data in main.target_table: # target_table에 있는 테이블들을 순회
         new_data = main.get_data(main.result_mdb, table_data[0]) # 새로운 mdb 파일에서 데이터 가져오기
         for element in new_data: # mdb 파일에서 가져온 데이터를 순회
