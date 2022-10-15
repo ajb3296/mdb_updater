@@ -1,4 +1,5 @@
 import os
+import time
 import shutil
 import sqlite3
 
@@ -16,6 +17,11 @@ class Main():
         self.fail_search = []
 
     def copy_result_mdb(self):
+        try:
+            shutil.rmtree('result')
+        except FileNotFoundError:
+            pass
+        os.mkdir("result")
         shutil.copy2(self.new_mdb, self.result_mdb)
 
     def get_path(self, status = None):
@@ -126,3 +132,6 @@ if __name__ == "__main__":
     file = open("logs/fail_apply.txt", "w", encoding = 'UTF-8')
     file.write(text)
     file.close()
+
+    print("\nfinish")
+    time.sleep(5)
