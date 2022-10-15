@@ -89,6 +89,8 @@ class Main():
         return True
 
 if __name__ == "__main__":
+    version = "V1.0.1"
+    print(f"Version : {version}")
     main = Main()
 
     # 경로 설정
